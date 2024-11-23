@@ -1,0 +1,40 @@
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: transform 0.7s;
+}
+
+.rotate-0 {
+  transform: rotate(0deg);
+  transition: transform 0.7s;
+}
+
+.max-h-0 {
+  max-height: 0;
+}
+
+.max-h-40 {
+  max-height: 10rem; /* Ajusta esta altura según sea necesario */
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.icon-button:hover {
+  transform: scale(1.2);
+}
+
+.icon-button.edit {
+  color: #4caf50; /* Verde para editar */
+}
+
+.icon-button.delete {
+  color: #f44336; /* Rojo para eliminar */
+}
+
+.icon-button.disable {
+  color: #ff9800; /* Naranja para deshabilitar */
+}

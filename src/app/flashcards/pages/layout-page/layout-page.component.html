@@ -1,0 +1,50 @@
+<div class="min-h-screen bg-gray-100 flex flex-col">
+  <app-header/>
+  <div class="flex flex-1 pt-16">
+    <!-- Sidebar -->
+    <aside [ngClass]="{
+        'w-64': isSidebarExpanded,
+        'w-16': !isSidebarExpanded
+      }" class="bg-blue-500 text-white shadow-2xl transition-all duration-300 flex flex-col relative z-10">
+      <button (click)="toggleSidebar()"
+        class="absolute flex items-center justify-center w-10 h-10 bg-blue-500 shadow-xl rounded-r-full p-2 z-20 transform -translate-y-1/2 top-1/2 -right-8 hover:scale-110 transition-transform duration-300">
+        <i [class]="'bx ' + (isSidebarExpanded ? 'bx-chevron-left' : 'bx-chevron-right')"
+          [ngClass]="{'rotate-180': !isSidebarExpanded, 'rotate-0': isSidebarExpanded}"></i>
+      </button>
+
+      <nav class="p-4 flex-1 overflow-y-auto">
+        <ul [ngClass]="{ 'space-y-2': isSidebarExpanded, 'text-center': !isSidebarExpanded }">
+          <li *ngFor="let item of menuItems"
+            class="menu-item p-2 hover:bg-blue-400 rounded-lg cursor-pointer transition-all duration-300 flex items-center"
+            [ngClass]="{ 'justify-center': !isSidebarExpanded }">
+            <!-- Muestra texto si el menú está expandido -->
+            <span [ngClass]="{ 'hidden': !isSidebarExpanded, 'flex': isSidebarExpanded }"
+              class="flex items-center transition-opacity duration-300">
+              <i [class]="'bx ' + item.icon + ' text-xl'"></i>
+              <span class="ml-2">{{ item.label }}</span>
+            </span>
+
+            <!-- Muestra íconos si el menú está contraído -->
+            <i *ngIf="!isSidebarExpanded" [class]="'bx ' + item.icon + ' text-3xl'"></i>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- el icono de chevron siempre debe estar en la mitad -->
+    <!-- Main Content -->
+    <main [ngClass]="{
+        'pl-[60px]': isSidebarExpanded,
+        'pl-16': !isSidebarExpanded
+      }" class="transition-all duration-300 flex-1 pt-6 flex flex-col bg-green-500">
+      <h2 class="text-2xl font-bold mb-4">Contenido Principal</h2>
+      <div class="grid grid-cols-3 vw-100">
+
+        <app-card/>
+        <app-card/>
+        <app-card/>
+      </div>
+
+
+    </main>
+  </div>
+</div>

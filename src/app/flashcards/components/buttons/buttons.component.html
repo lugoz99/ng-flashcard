@@ -1,0 +1,24 @@
+<div class="flex flex-col items-center justify-center">
+  <button (click)="toggleMenu()"
+    class="flex items-center justify-center p-4 bg-gray-200 rounded-full transition-transform duration-700">
+    <i [ngClass]="{'rotate-180': isMenuOpen, 'rotate-0': !isMenuOpen}" class='bx bx-chevrons-down text-2xl'></i>
+  </button>
+
+  <div [ngClass]="{'max-h-0': !isMenuOpen, 'max-h-40': isMenuOpen}"
+    class="overflow-hidden border border-solid transition-all duration-700 ease-in-out mt-4 w-full flex justify-center items-center">
+    <div class="flex space-x-4 py-1">
+      <!-- Icono de editar -->
+      <button class="icon-button edit">
+        <i class='bx bx-edit text-2xl'></i>
+      </button>
+      <!-- Icono de eliminar -->
+      <button class="icon-button delete">
+        <i class='bx bx-trash text-2xl'></i>
+      </button>
+      <!-- Icono de deshabilitar -->
+      <button class="icon-button disable">
+        <i class='bx bx-block text-2xl'></i>
+      </button>
+    </div>
+  </div>
+</div>

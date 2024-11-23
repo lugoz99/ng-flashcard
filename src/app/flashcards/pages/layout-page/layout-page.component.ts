@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-layout-page',
+  templateUrl: './layout-page.component.html',
+  styles: ``
 })
-export class AppComponent {
+export class LayoutPageComponent {
   title = 'ng-flash-tech';
   isSidebarExpanded = true;
   menuItems = [
