@@ -15,6 +15,7 @@
       <nav class="p-4 flex-1 overflow-y-auto">
         <ul [ngClass]="{ 'space-y-2': isSidebarExpanded, 'text-center': !isSidebarExpanded }">
           <li *ngFor="let item of menuItems"
+            [routerLink]="item.url"
             class="menu-item p-2 hover:bg-blue-400 rounded-lg cursor-pointer transition-all duration-300 flex items-center"
             [ngClass]="{ 'justify-center': !isSidebarExpanded }">
             <!-- Muestra texto si el menú está expandido -->
@@ -37,13 +38,11 @@
         'pl-16': !isSidebarExpanded
       }" class="transition-all duration-300 flex-1 pt-6 flex flex-col bg-green-500">
       <h2 class="text-2xl font-bold mb-4">Contenido Principal</h2>
-      <div class="grid grid-cols-3 vw-100">
-
-        <app-card/>
-        <app-card/>
-        <app-card/>
+    <div class="grid grid-cols-3 w-full">
+      <div class="col-span-2">
+        <router-outlet></router-outlet>
       </div>
-
+    </div>
 
     </main>
   </div>

@@ -1,0 +1,22 @@
+<!-- Spinner de carga -->
+<div *ngIf="isLoading" class="flex justify-center items-center h-screen">
+  <div class="border-t-4 border-blue-500 border-solid w-16 h-16 rounded-full animate-spin"></div>
+</div>
+
+<!-- Contenedor principal -->
+<div *ngIf="!isLoading" class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
+
+  <!-- Historia generada -->
+  <div  class="mt-8 p-6 bg-white rounded-lg shadow-xl max-w-3xl mx-auto">
+    <div class="flex justify-center items-center space-x-2 mb-6">
+      <i class="bx bx-book-open text-3xl text-blue-600"></i>
+      <h2 class="text-4xl font-bold text-gray-800 text-center">{{ story.title }}</h2>
+    </div>
+
+    <div
+      class="text-lg text-gray-700 leading-relaxed bg-white p-6 rounded-lg shadow-md border border-gray-200 h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-100">
+      <p class="text-gray-800">{{ story.storyText }}</p>
+    </div>
+  </div>
+
+</div>

@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { FlashcardsModule } from './flashcards/flashcards.module';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,6 +16,8 @@ import { FlashcardsModule } from './flashcards/flashcards.module';
     AppRoutingModule,
     CommonModule,
     FlashcardsModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
